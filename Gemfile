@@ -68,3 +68,12 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+
+gem 'devise'
+
+gem 'carrierwave'
+
+gem 'faker'
+
+gem 'kaminari'
