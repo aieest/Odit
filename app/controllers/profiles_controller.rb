@@ -1,5 +1,5 @@
 class ProfilesController < ApplicationController
-  before_action :authenticate_user!
+  before_action :redirect_based_on_auth, except: [:new, :create, :edit, :update]
   before_action :set_profile, only: [:show, :edit, :update]
 
   def show
@@ -16,7 +16,7 @@ class ProfilesController < ApplicationController
   def create
     @profile = current_user.build_profile(profile_params)
     if @profile.save
-      redirect_to @profile, notice: 'Profile was successfully created.'
+      redirect_to home_path, notice: 'Profile was successfully created.'
     else
       render :new
     end
@@ -27,7 +27,7 @@ class ProfilesController < ApplicationController
 
   def update
     if @profile.update(profile_params)
-      redirect_to @profile, notice: 'Profile was successfully updated.'
+      redirect_to home_path, notice: 'Profile was successfully updated.'
     else
       render :edit
     end
