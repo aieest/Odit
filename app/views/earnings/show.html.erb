@@ -1,0 +1,8 @@
+<h1>Earning Details</h1>
+
+<p><strong>Title:</strong> <%= @earning.title %></p>
+<p><strong>Value:</strong> <%= number_to_currency(@earning.value) %></p>
+<p><strong>Interval:</strong> <%= @earning.interval.strftime('%B %d, %Y') %></p>
+
+<%= link_to 'Edit', edit_profile_earning_path(@profile, @earning) %> |
+<%= link_to 'Back', profile_earnings_path(@profile) %>
