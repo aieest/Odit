@@ -11,5 +11,8 @@ Rails.application.routes.draw do
   get 'guest', to: 'pages#guest'
   
   get "up" => "rails/health#show", as: :rails_health_check
-  resources :profiles, except: [:index, :destroy]
+  
+  resources :profiles, except: [:index, :destroy] do
+    resources :earnings
+  end
 end
