@@ -11,12 +11,21 @@
   }
 
 body {
+    overflow: hidden;
     background: var(--main-bg);
 }
+main.main-div {
+    height: 100vh;
+    width: 100vh;
+    display: grid;
+    align-items: center;
+    grid-template-columns: 7.5vw 92.5vw;
+}
 
-.main-nav {
+nav.main-nav {
+    margin: auto;
     box-shadow: var(--initial-shadow);
-    border-radius: 0 15px 15px 0;
+    border-radius: 15px;
     height: 90vh;
     background: var(--card-bg);
     display: flex;
@@ -28,4 +37,12 @@ body {
 .main-nav-btn {
     color: var(--accent-primary);
     margin: auto;
+}
+
+div.main-content {
+    height: 90vh;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 70% 30%;
+    align-items: center;
 }
