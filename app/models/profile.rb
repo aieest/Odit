@@ -1,5 +1,6 @@
 class Profile < ApplicationRecord
   belongs_to :user
+  has_many :earnings
 
   mount_uploader :profile_picture, ProfilePictureUploader
   
