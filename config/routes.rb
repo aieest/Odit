@@ -14,5 +14,6 @@ Rails.application.routes.draw do
   
   resources :profiles, except: [:index, :destroy] do
     resources :earnings
+    resources :expenses
   end
 end
