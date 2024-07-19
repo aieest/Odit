@@ -1,0 +1,8 @@
+<h1>Expense Details</h1>
+
+<p><strong>Title:</strong> <%= @expense.title %></p>
+<p><strong>Value:</strong> <%= number_to_currency(@expense.value) %></p>
+<p><strong>Interval:</strong> <%= @expense.interval.strftime('%B %d, %Y') %></p>
+
+<%= link_to 'Edit', edit_profile_expense_path(@profile, @expense) %> |
+<%= link_to 'Back', profile_expenses_path(@profile) %>

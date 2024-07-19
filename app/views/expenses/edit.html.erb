@@ -1,0 +1,6 @@
+<h1>Edit Expense</h1>
+
+<%= render 'form', expense: @expense %>
+
+<%= link_to 'Show', profile_expense_path(@profile, @expense) %> |
+<%= link_to 'Back', profile_expenses_path(@profile) %>
