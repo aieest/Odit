@@ -27,7 +27,12 @@
       <% end %>
     </div>
     <main class="container mx-auto mt-28 px-5 flex">
-      <%= yield %>
+      <div class="nav">
+        <%= render 'partials/main-nav' %>
+      </div>
+      <div class="main-content">
+        <%= yield %>
+      </div>
     </main>
   </body>
 </html>
