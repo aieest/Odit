@@ -9,29 +9,33 @@
 
 <h2>Total Earnings: <%= number_to_currency(@total) %></h2>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Value</th>
-      <th>Interval</th>
-      <th>Actions</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @earnings.each do |earning| %>
+<% if @earnings.any? %>
+  <table>
+    <thead>
       <tr>
-        <td><%= earning.title %></td>
-        <td><%= number_to_currency(earning.value) %></td>
-        <td><%= earning.interval.strftime('%B %d, %Y') %></td>
-        <td>
-          <%= link_to 'Show', profile_earning_path(@profile, earning) %>
-          <%= link_to 'Edit', edit_profile_earning_path(@profile, earning) %>
-          <%= link_to 'Delete', profile_earning_path(@profile, earning), method: :delete, data: { confirm: 'Are you sure?' } %>
-        </td>
+        <th>Title</th>
+        <th>Value</th>
+        <th>Interval</th>
+        <th>Actions</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+      <% @earnings.each do |earning| %>
+        <tr>
+          <td><%= earning.title %></td>
+          <td><%= number_to_currency(earning.value) %></td>
+          <td><%= earning.interval.strftime('%B %d, %Y') %></td>
+          <td>
+            <%= link_to 'Show', profile_earning_path(@profile, earning) %>
+            <%= link_to 'Edit', edit_profile_earning_path(@profile, earning) %>
+            <%= link_to 'Delete', profile_earning_path(@profile, earning), method: :delete, data: { confirm: 'Are you sure?' } %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <p>No Earnings</p>
+<% end %>
 
 <%= link_to 'New Earning', new_profile_earning_path(@profile) %>

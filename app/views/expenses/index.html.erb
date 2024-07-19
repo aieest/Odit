@@ -9,29 +9,33 @@
 
 <h2>Total Expenses: <%= number_to_currency(@total) %></h2>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Value</th>
-      <th>Interval</th>
-      <th>Actions</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @expenses.each do |expense| %>
+<% if @expenses.any? %>
+  <table>
+    <thead>
       <tr>
-        <td><%= expense.title %></td>
-        <td><%= number_to_currency(expense.value) %></td>
-        <td><%= expense.interval.strftime('%B %d, %Y') %></td>
-        <td>
-          <%= link_to 'Show', profile_expense_path(@profile, expense) %>
-          <%= link_to 'Edit', edit_profile_expense_path(@profile, expense) %>
-          <%= link_to 'Delete', profile_expense_path(@profile, expense), method: :delete, data: { confirm: 'Are you sure?' } %>
-        </td>
+        <th>Title</th>
+        <th>Value</th>
+        <th>Interval</th>
+        <th>Actions</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+      <% @expenses.each do |expense| %>
+        <tr>
+          <td><%= expense.title %></td>
+          <td><%= number_to_currency(expense.value) %></td>
+          <td><%= expense.interval.strftime('%B %d, %Y') %></td>
+          <td>
+            <%= link_to 'Show', profile_expense_path(@profile, expense) %>
+            <%= link_to 'Edit', edit_profile_expense_path(@profile, expense) %>
+            <%= link_to 'Delete', profile_expense_path(@profile, expense), method: :delete, data: { confirm: 'Are you sure?' } %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <p>No Expenses</p>
+<% end %>
 
 <%= link_to 'New Expense', new_profile_expense_path(@profile) %>

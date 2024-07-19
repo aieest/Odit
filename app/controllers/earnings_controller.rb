@@ -45,6 +45,7 @@ class EarningsController < ApplicationController
 
   def set_profile
     @profile = current_user.profile
+    redirect_to new_profile_path, alert: 'Please create a profile first.' unless @profile
   end
 
   def set_earning
@@ -58,13 +59,18 @@ class EarningsController < ApplicationController
   def filter_earnings(filter)
     case filter
     when 'daily'
-      @profile.earnings.where('DATE(interval) = ?', Date.today)
+      @profile.earnings.where('date(interval) = ?', Date.today.to_s)
     when 'monthly'
-      @profile.earnings.where('EXTRACT(YEAR FROM interval) = ? AND EXTRACT(MONTH FROM interval) = ?', Date.today.year, Date.today.month)
+      start_of_month = Date.today.beginning_of_month
+      end_of_month = Date.today.end_of_month
+      @profile.earnings.where('date(interval) BETWEEN ? AND ?', start_of_month, end_of_month)
     when 'yearly'
-      @profile.earnings.where('EXTRACT(YEAR FROM interval) = ?', Date.today.year)
+      start_of_year = Date.today.beginning_of_year
+      end_of_year = Date.today.end_of_year
+      @profile.earnings.where('date(interval) BETWEEN ? AND ?', start_of_year, end_of_year)
     else
       @profile.earnings
     end
   end
 end
+
