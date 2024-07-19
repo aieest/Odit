@@ -1,15 +1,31 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+/* Color generated from https://coolors.co/0b2027-40798c-70a9a1-cfd7c7-f6f1d1 */
+
+
+:root {
+    --card-bg: #F6F1D1;
+    --main-bg: #CFD7C7;
+    --accent-secondary: #70A9A1;
+    --accent-primary: #40798C;
+    --text-color: #0B2027;
+    --initial-shadow: 0.5px 0 10px 1px #0000001b;
+  }
+
+body {
+    background: var(--main-bg);
+}
+
+.main-nav {
+    box-shadow: var(--initial-shadow);
+    border-radius: 0 15px 15px 0;
+    height: 90vh;
+    background: var(--card-bg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.main-nav-btn {
+    color: var(--accent-primary);
+    margin: auto;
+}

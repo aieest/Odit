@@ -1,5 +1,5 @@
 <% if user_signed_in? %>
-  <%= link_to 'Home', home_path, class: 'text-white hover:text-gray-300' %>
+  <%= link_to 'Home', home_path, class: 'main-nav-btn text-white hover:text-gray-300' %>
   <%= link_to 'Earnings', profile_earnings_path(current_user.profile), class: 'main-nav-btn text-white hover:text-gray-300' %>
   <%= link_to 'Expenses', profile_expenses_path(current_user.profile), class: 'main-nav-btn text-white hover:text-gray-300' %>
   <%= link_to 'Profile', profile_path(current_user.profile), class: 'main-nav-btn text-white hover:text-gray-300' %>
