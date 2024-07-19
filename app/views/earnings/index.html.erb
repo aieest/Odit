@@ -1,0 +1,37 @@
+<h1>Earnings</h1>
+
+<div>
+  <%= link_to 'All', profile_earnings_path(@profile, filter: 'all') %>
+  <%= link_to 'Daily', profile_earnings_path(@profile, filter: 'daily') %>
+  <%= link_to 'Monthly', profile_earnings_path(@profile, filter: 'monthly') %>
+  <%= link_to 'Yearly', profile_earnings_path(@profile, filter: 'yearly') %>
+</div>
+
+<h2>Total Earnings: <%= number_to_currency(@total) %></h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Value</th>
+      <th>Interval</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @earnings.each do |earning| %>
+      <tr>
+        <td><%= earning.title %></td>
+        <td><%= number_to_currency(earning.value) %></td>
+        <td><%= earning.interval.strftime('%B %d, %Y') %></td>
+        <td>
+          <%= link_to 'Show', profile_earning_path(@profile, earning) %>
+          <%= link_to 'Edit', edit_profile_earning_path(@profile, earning) %>
+          <%= link_to 'Delete', profile_earning_path(@profile, earning), method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'New Earning', new_profile_earning_path(@profile) %>
