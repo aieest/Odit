@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_07_18_060747) do
+ActiveRecord::Schema[7.1].define(version: 2024_07_19_000516) do
   create_table "earnings", force: :cascade do |t|
     t.string "title"
     t.decimal "value"
@@ -19,6 +19,16 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_18_060747) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["profile_id"], name: "index_earnings_on_profile_id"
+  end
+
+  create_table "expenses", force: :cascade do |t|
+    t.string "title"
+    t.decimal "value"
+    t.datetime "interval"
+    t.integer "profile_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["profile_id"], name: "index_expenses_on_profile_id"
   end
 
   create_table "profiles", force: :cascade do |t|
@@ -46,5 +56,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_18_060747) do
   end
 
   add_foreign_key "earnings", "profiles"
+  add_foreign_key "expenses", "profiles"
   add_foreign_key "profiles", "users"
 end

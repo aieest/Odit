@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  value: 9.99
+  interval: 2024-07-19 12:05:16
+  profile: one
+
+two:
+  title: MyString
+  value: 9.99
+  interval: 2024-07-19 12:05:16
+  profile: two
