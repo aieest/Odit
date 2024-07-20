@@ -26,19 +26,25 @@
       <% end %>
     </div>
     <main class="main-div">
-      <nav class="main-nav">
-        <%= render 'partials/main-nav' %>
-      </nav>
+      <% unless controller_name == 'profiles' && action_name == 'new' %>
+        <nav class="main-nav">
+          <%= render 'partials/main-nav' %>
+        </nav>
+      <% end %>  
       <div class="main-content-div">
         <%= yield %>
       </div>
-      <div class="user-info-div">
-        <% if current_user.profile %>
-          <%= render partial: 'profiles/profile_info', locals: { profile: current_user.profile } %>
-        <% else %>
-          <%= link_to 'Create Profile', new_profile_path, class: 'bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded transition duration-300 mb-4 inline-block' %>
-        <% end %>
-      </div>
+      <% if user_signed_in? %>
+        <div class="user-info-div">
+          <% if current_user.profile && !(controller_name == 'profiles' && action_name == 'new') %>
+            <%= render partial: 'profiles/profile_info', locals: { profile: current_user.profile } %>
+          <% else %>
+            <% unless controller_name == 'profiles' && action_name == 'new' %>
+              <%= link_to 'Create Profile', new_profile_path, class: 'bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded transition duration-300 mb-4 inline-block' %>
+            <% end %>
+          <% end %>
+        </div>
+      <% end %>
     </main>
   </body>
 </html>
