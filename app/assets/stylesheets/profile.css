@@ -8,7 +8,3 @@ div.profile-info-content {
     grid-row-start: 1;
     grid-row-end: 2;
 }
-
-div.profile-info-content h1 {
-    font: 25px;
-}

@@ -15,7 +15,17 @@ body {
     overflow: hidden;
     background: var(--main-bg);
 }
+
 main.main-div {
+    height: 100vh;
+    width: 100vw;
+}
+
+/* Session Guest (no user signed in */
+
+
+/* Session True (user signed in) */
+div.session-true {
     height: 100vh;
     width: 100vw;
     padding: 0 20px;
@@ -87,3 +97,9 @@ div.profile-not-finished-div h1 {
 }
 
 
+/* main buttons */
+
+.sign-out-btn {
+    background: var(--accent-secondary);
+    color: var(--card-bg);
+}
