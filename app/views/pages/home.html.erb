@@ -1,7 +1,21 @@
+<div class="session-true">
+  <nav class="main-nav">
+    <%= render 'partials/main-nav' %>
+  </nav>
 
-<h1 class="text-4xl font-bold text-gray-800 mb-4">Welcome, <%= current_user.email %></h1>
-<p class="text-lg text-gray-600 mb-2">Find me in app/views/pages/home.html.erb</p>
-<p class="text-lg text-green-600 font-semibold mb-6">If you are here, that means you are signed in</p>
+  <div class="main-content-div">
+    <% if current_user.profile && current_user.profile.complete? %>      
+      <h1 class="text-4xl font-bold text-gray-800 mb-4">Welcome <%= current_user.email %></h1>
+      <p class="text-lg text-gray-600 mb-2">Find me in app/views/pages/home.html.erb</p>
+      <p class="text-lg text-green-600 font-semibold mb-6">If you are here, that means you are signed in and have finished your profile set up</p>
+      <%= button_to 'Sign out', destroy_user_session_path, method: :delete, class: 'bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded transition duration-300', data: { turbo: false } %>
+    <% else %>
+      <%= render partial: 'partials/profile-not-finished' %>
+    <% end %>
+ </div>
 
-<%= button_to 'Sign out', destroy_user_session_path, method: :delete, class: 'bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded transition duration-300', data: { turbo: false } %>
+  <div class="profile-info-div grid">
+    <%= render partial: 'profiles/profile-info-card', locals: { profile: current_user.profile } %>
+  </div>
+</div>
 
