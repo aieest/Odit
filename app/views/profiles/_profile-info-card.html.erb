@@ -9,8 +9,8 @@
       <%= link_to 'Edit Profile', edit_profile_path(profile), class: 'bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded transition duration-300 mt-4 inline-block' %>
     
     <% else %>
-    <p class="text-center">You are signed in as:</p>
-    <h1 class="text-center text-2xl"><%= current_user.email %></h1>
-    
+      <p class="text-center">You are signed in as:</p>
+      <h1 class="text-center text-2xl"><%= current_user.email %></h1>
+      <%= button_to 'Sign out', destroy_user_session_path, method: :delete, class: 'sign-out-btn mt-4 font-semibold py-2 px-4 rounded transition duration-300', data: { turbo: false } %>
     <% end %>
 </div>
