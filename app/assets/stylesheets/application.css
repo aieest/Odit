@@ -50,16 +50,18 @@ div.main-content-div {
     width: 97.5%;
 }
 
-div.user-info-div {
+div.profile-info-div {
     margin: auto;
-    border: 1px solid black;/*remove this after styling*/
+    width: 97.5%;
     padding: 0;
     height: 90vh;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
 }
 
 div.profile-not-finished-div {
     box-shadow: var(--initial-shadow);
-    border-radius: 10px;
+    border-radius: 15px;
     width: 100%;
     height: 100%;
     background: var(--card-bg);

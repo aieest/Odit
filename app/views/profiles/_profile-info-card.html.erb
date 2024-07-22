@@ -1,4 +1,4 @@
-<div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+<div class="profile-info-content flex flex-col items-center justify-center">
     <% if current_user.profile && current_user.profile.complete? %>
       <h2 class="text-2xl font-bold text-gray-800 mb-4">Your Profile</h2>
       <p class="mb-2"><strong>Given Name:</strong> <%= profile.given_name %></p>
@@ -9,7 +9,8 @@
       <%= link_to 'Edit Profile', edit_profile_path(profile), class: 'bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded transition duration-300 mt-4 inline-block' %>
     
     <% else %>
-      <p>You are signed in as:</p>
-      <h1><%= current_user.email %></h1>
+    <p class="text-center">You are signed in as:</p>
+    <h1 class="text-center text-2xl"><%= current_user.email %></h1>
+    
     <% end %>
 </div>
