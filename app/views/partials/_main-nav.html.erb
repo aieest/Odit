@@ -1,16 +1,20 @@
 <% if user_signed_in? %>
-  <%= link_to 'Home', home_path, class: 'main-nav-btn text-white hover:text-gray-300' %>
+  <%= link_to 'Home', home_path, class: 'main-nav-btn' %>
   
   <% if current_user.profile %>
-    <%= link_to 'Earnings', profile_earnings_path(current_user.profile), class: 'main-nav-btn text-white hover:text-gray-300' %>
-    <%= link_to 'Expenses', profile_expenses_path(current_user.profile), class: 'main-nav-btn text-white hover:text-gray-300' %>
-    <%= link_to 'Profile', profile_path(current_user.profile), class: 'main-nav-btn text-white hover:text-gray-300' %>
-    <%= link_to 'Edit Profile', edit_profile_path(current_user.profile), class: 'main-nav-btn text-white hover:text-gray-300' %>
+    <%= link_to 'Earnings', profile_earnings_path(current_user.profile), class: 'main-nav-btn' %>
+    <%= link_to 'Expenses', profile_expenses_path(current_user.profile), class: 'main-nav-btn' %>
+    <%= link_to 'Profile', profile_path(current_user.profile), class: 'main-nav-btn' %>
+    <%= link_to 'Edit Profile', edit_profile_path(current_user.profile), class: 'main-nav-btn' %>
   <% else %>
-    <%= link_to 'Create Profile', new_profile_path, class: 'main-nav-btn text-white hover:text-gray-300' %>
+    <%= link_to 'Create Profile', new_profile_path, class: 'main-nav-btn' %>
   <% end %>
   
-  <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: 'main-nav-btn text-white hover:text-gray-300' %>
+  <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: 'main-nav-btn' %>
 <% else %>
-  <p>Sign in to Access</p>
+  <!--Disabled nav links-->
+  <i class="main-nav-btn">Earnings</i>
+  <i class="main-nav-btn">Expenses</i>
+  <i class="main-nav-btn">Graph</i>
+  <i class="main-nav-btn">Settings</i>
 <% end %>
