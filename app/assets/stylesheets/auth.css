@@ -1,0 +1,144 @@
+div.auth-container {
+    height: 100%;
+}
+
+
+
+div.auth-reg-card { /* Sign Up Card */
+    border-radius: 15px;
+    height: fit-content;
+    width: 350px;
+    padding: 30px 0;
+    background: var(--card-bg);
+    box-shadow: var(--initial-shadow);
+}
+
+div.auth-card { /* Sign In Card */
+    border-radius: 15px;
+    height: fit-content;
+    width: 350px;
+    padding: 30px 0;
+    background: var(--card-bg);
+    box-shadow: var(--initial-shadow);
+}
+
+form.new_user {
+    width: 80%;
+}
+
+.auth-header {
+    margin-bottom: 10px;
+    text-align: center;
+    color: var(--text-color);
+    font-size: 26px;
+}
+
+.field {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+
+label.auth-label {
+    color: var(--text-color);
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.auth-input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid var(--accent-secondary);
+    border-radius: 4px;
+    font-size: 16px;
+    transition: 0.3s ease;
+}
+
+.auth-input:focus {
+    outline: var(--accent-primary);
+    box-shadow: 0px 0px 3px 1px var(--accent-primary);
+    border-color: var(--accent-primary);
+}
+
+.actions {
+    text-align: center;
+    margin-top: 15px;
+}
+
+input[type="submit"] {
+    border: none;
+    font-size: 16px;
+    padding: 7px;
+    width: 100%;
+    background-color: var(--accent-primary);
+    color: var(--card-bg);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+  
+input[type="submit"]:hover {
+    background-color: var(--accent-secondary);
+}
+
+.remember-me-field {
+    margin: auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.remember-me-label {
+    padding-bottom: 1px;
+    padding-left: 2px;
+    font-size: 13px;
+    color: var(--text-color);
+}
+
+.remember-me-checkbox {
+    width: 18px;
+    height: 18px;
+    border: 1px solid var(--accent-secondary);
+    border-radius: 3px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+  
+.remember-me-checkbox:checked {
+    background-color: var(--accent-primary);
+    border-color: var(--accent-primary);
+}
+
+.remember-me-checkbox:checked::before {
+    display: block;
+    text-align: center;
+    padding-bottom: 2px;
+    color: var(--card-bg);
+    font-size: 12px;
+    line-height: 18px;
+}
+
+p.auth-alt-link {
+    margin: 15px auto 0 auto;
+    text-align: center;
+    color: var(--text-color);
+    font-size: 15px;
+}
+
+p.auth-alt-link a {
+    color: var(--accent-primary);
+    border: none;
+    cursor: pointer;
+    transition: 0.3s ease;
+    text-decoration: none;
+}
+
+a.forgot-password-link {
+    text-align: center;
+    color: var(--accent-primary);
+    font-size: 13px;
+}
+
+a:hover {
+    color: var(--accent-secondary);
+}
