@@ -69,6 +69,8 @@ div.profile-info-div {
     grid-template-rows: 1fr 1fr 1fr;
 }
 
+/* Profile Not Finished */
+
 div.profile-not-finished-div {
     box-shadow: var(--initial-shadow);
     border-radius: 15px;
