@@ -1,10 +1,21 @@
 /* Profile Info Card */
 
 div.profile-info-content {
+    height: fit-content;
     box-shadow: var(--initial-shadow);
     border-radius: 15px;
+    padding: 25px 0 25px 0;
     background: var(--card-bg);
-    width: 100%;
+    width: 95%;
     grid-row-start: 1;
     grid-row-end: 2;
 }
+
+.card-profile-picture {
+    border: 1px dashed var(--accent-secondary);
+    object-fit: cover;
+  }
+
+  p.profile-card.text {
+    color: var(--text-color);
+  }
