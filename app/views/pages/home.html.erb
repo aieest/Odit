@@ -8,7 +8,7 @@
     <div class="home-container">
       <div class="home-balance-card">
         <p class="home-card-label">Current Balance</p>
-        <h1 class="home-main-value font-semibold"><%= current_user.profile.balance %></h1>
+        <h1 class="home-main-value font-semibold"><%= number_to_currency(current_user.profile.balance) %></h1>
       </div>
       <div class="home-total-earnings-card">
         <p class="home-card-label">Total Earnings</p>
