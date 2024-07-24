@@ -3,6 +3,15 @@ div.home-container {
     grid-template-columns: 25% 25% 25% 25%;
 }
 
+p.home-card-label {
+    color: var(--text-color);
+}
+
+h1.home-main-value {
+    font-size: 50px;
+    color: var(--accent-primary);
+}
+
 div.home-balance-card {
     width: 97.5%;
     border-radius: 15px;
@@ -10,11 +19,6 @@ div.home-balance-card {
     background: var(--card-bg);
     padding: 20px 25px;
     grid-column-start: span 2;
-}
-
-h1.home-main-value {
-    font-size: 50px;
-    color: var(--accent-primary);
 }
 
 div.home-total-earnings-card {
