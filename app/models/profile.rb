@@ -12,4 +12,16 @@ class Profile < ApplicationRecord
   def complete?
     given_name.present? && last_name.present? && gender.present? && balance.present?
   end
+
+  def total_earnings
+    earnings.sum(:value)
+  end
+
+  def total_expenses
+    expenses.sum(:value)
+  end
+
+  def current_balance
+    balance + (total_earnings - total_expenses)
+  end
 end
