@@ -41,6 +41,7 @@ nav.main-nav {
     box-shadow: var(--initial-shadow);
     border-radius: 15px;
     height: 90vh;
+    width: 90%;
     background: var(--card-bg);
     display: flex;
     flex-direction: column;
@@ -49,8 +50,16 @@ nav.main-nav {
 }
 
 .main-nav-btn {
-    color: var(--accent-primary);
     margin: auto;
+    height: 60px;
+    width: 90%;
+}
+
+.main-nav-btn svg {
+    margin: auto;
+    height: 90%;
+    width: 90%;
+    color: var(--accent-primary);
 }
 
 div.main-content-div {
