@@ -77,3 +77,5 @@ gem 'carrierwave'
 gem 'faker'
 
 gem 'kaminari'
+
+gem "heroicon"

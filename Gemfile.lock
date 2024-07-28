@@ -121,6 +121,8 @@ GEM
     ffi (1.17.0-x86_64-linux-gnu)
     globalid (1.2.1)
       activesupport (>= 6.1)
+    heroicon (1.0.0)
+      rails (>= 5.2)
     i18n (1.14.5)
       concurrent-ruby (~> 1.0)
     image_processing (1.12.2)
@@ -298,6 +300,7 @@ DEPENDENCIES
   debug
   devise
   faker
+  heroicon
   importmap-rails
   jbuilder
   kaminari
