@@ -7,8 +7,10 @@ p.home-card-label {
     color: var(--text-color);
 }
 
-h1.home-main-value {
-    font-size: 50px;
+div.home-main-value-container{
+    font-size: 3rem;
+    height: 90%;
+    display: flex;
     color: var(--accent-primary);
 }
 
