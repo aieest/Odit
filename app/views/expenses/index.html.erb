@@ -1,7 +1,7 @@
-<h1>Expenses</h1>
+<h1 class="this">Expenses</h1>
 
 <div>
-  <%= link_to 'All', profile_expenses_path(@profile, filter: 'all') %>
+  <%= link_to 'All', profile_expenses_path(@profile, filter: 'all'), class:"this" %>
   <%= link_to 'Daily', profile_expenses_path(@profile, filter: 'daily') %>
   <%= link_to 'Monthly', profile_expenses_path(@profile, filter: 'monthly') %>
   <%= link_to 'Yearly', profile_expenses_path(@profile, filter: 'yearly') %>
