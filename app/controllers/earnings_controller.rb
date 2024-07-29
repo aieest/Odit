@@ -38,7 +38,7 @@ class EarningsController < ApplicationController
 
   def destroy
     @earning.destroy
-    redirect_to profile_earnings_path(@profile), notice: 'Earning was successfully destroyed.'
+    redirect_to profile_earnings_path(@profile), notice: 'Earning was successfully deleted.'
   end
 
   private

@@ -38,7 +38,7 @@ class ExpensesController < ApplicationController
 
   def destroy
     @expense.destroy
-    redirect_to profile_expenses_path(@profile), notice: 'Expense was successfully destroyed.'
+    redirect_to profile_expenses_path(@profile), notice: 'Expense was successfully deleted.'
   end
 
   private
