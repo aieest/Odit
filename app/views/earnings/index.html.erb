@@ -35,7 +35,7 @@
                   <div class="earning-card-actions">
                     <%= link_to 'Show', profile_earning_path(@profile, earning) %>
                     <%= link_to 'Edit', edit_profile_earning_path(@profile, earning) %>
-                    <%= link_to 'Delete', profile_earning_path(@profile, earning), method: :delete, data: { confirm: 'Are you sure?' } %>
+                    <%= button_to 'Delete', profile_earning_path(@profile, earning), method: :delete, data: { turbo_confirm: 'Are you sure you want to delete this earning?' } %>
                   </div>
               </div>
               <% end %>
