@@ -1,41 +1,56 @@
-<h1>Earnings</h1>
+<div class="session-true">
+  <nav class="main-nav">
+    <%= render 'partials/main-nav' %>
+  </nav>
 
-<div>
-  <%= link_to 'All', profile_earnings_path(@profile, filter: 'all') %>
-  <%= link_to 'Daily', profile_earnings_path(@profile, filter: 'daily') %>
-  <%= link_to 'Monthly', profile_earnings_path(@profile, filter: 'monthly') %>
-  <%= link_to 'Yearly', profile_earnings_path(@profile, filter: 'yearly') %>
+  <div class="main-content-div">
+    <% if current_user.profile && current_user.profile.complete? %>
+    <div class="earnings-container">
+
+      <div class="total-earnings-card">
+        <p class="home-card-label">Total Earnings</p>
+        <h1 class="home-main-value font-semibold"><%= number_to_currency(current_user.profile.total_earnings) %> <%= link_to '+', new_profile_earning_path(@profile)%></h1>
+      </div>
+
+      <div class="date-filters-div">
+        <%= link_to 'All', profile_earnings_path(@profile, filter: 'all'), class: "filter-btn flex items-center justify-center" %>
+        <%= link_to 'Daily', profile_earnings_path(@profile, filter: 'daily'), class: "filter-btn flex items-center justify-center" %>
+        <%= link_to 'Monthly', profile_earnings_path(@profile, filter: 'monthly'), class: "filter-btn flex items-center justify-center" %>
+        <%= link_to 'Yearly', profile_earnings_path(@profile, filter: 'yearly'), class: "filter-btn flex items-center justify-center" %>
+      </div>
+      
+      <div class="earnings-card-container">
+        <% if @earnings.any? %>
+              <% @earnings.each do |earning| %>
+              <div class="earnings-card">
+                <h2 class="earning-card-title">
+                  <%= earning.title %>
+                </h2>
+                <p class="earning-card-value">
+                  <%= number_to_currency(earning.value) %>
+                </p>
+                <p class="earning-card-time">
+                  <%= earning.interval.strftime('%B %d, %Y') %>
+                </p>
+                  <div class="earning-card-actions">
+                    <%= link_to 'Show', profile_earning_path(@profile, earning) %>
+                    <%= link_to 'Edit', edit_profile_earning_path(@profile, earning) %>
+                    <%= button_to 'Delete', profile_earning_path(@profile, earning), method: :delete, data: { turbo_confirm: 'Are you sure you want to delete this earning?' } %>
+                  </div>
+              </div>
+              <% end %>
+        <% else %>
+          <p>No Earnings</p>
+        <% end %>
+      </div>
+      
+    </div>
+    <% else %>
+    <%= render partial: 'partials/profile-not-finished' %>
+    <% end %>
+  </div>
+  
+  <div class="profile-info-div grid">
+    <%= render partial: 'profiles/profile-info-card', locals: { profile: current_user.profile } %>
+  </div>
 </div>
-
-<h2>Total Earnings: <%= number_to_currency(@total) %></h2>
-
-<% if @earnings.any? %>
-  <table>
-    <thead>
-      <tr>
-        <th>Title</th>
-        <th>Value</th>
-        <th>Interval</th>
-        <th>Actions</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @earnings.each do |earning| %>
-        <tr>
-          <td><%= earning.title %></td>
-          <td><%= number_to_currency(earning.value) %></td>
-          <td><%= earning.interval.strftime('%B %d, %Y') %></td>
-          <td>
-            <%= link_to 'Show', profile_earning_path(@profile, earning) %>
-            <%= link_to 'Edit', edit_profile_earning_path(@profile, earning) %>
-            <%= link_to 'Delete', profile_earning_path(@profile, earning), method: :delete, data: { confirm: 'Are you sure?' } %>
-          </td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-<% else %>
-  <p>No Earnings</p>
-<% end %>
-
-<%= link_to 'New Earning', new_profile_earning_path(@profile) %>

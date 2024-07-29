@@ -12,6 +12,8 @@ h1.home-main-value {
     color: var(--accent-primary);
 }
 
+/* Home Cards */
+
 div.home-balance-card {
     width: 97.5%;
     border-radius: 15px;
