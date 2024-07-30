@@ -5,9 +5,9 @@
 
   <div class="main-content-div">
     <% if current_user.profile && current_user.profile.complete? %>
-    <div class="earnings-container">
+    <div class="content-container">
 
-      <div class="total-earnings-card">
+      <div class="total-card">
         <p class="home-card-label">Total Earnings</p>
         <div class="home-main-value-container">
           <h1 class="home-main-value font-semibold"><%= number_to_currency(current_user.profile.total_earnings) %></h1>
@@ -22,20 +22,20 @@
         <%= link_to 'Yearly', profile_earnings_path(@profile, filter: 'yearly'), class: "filter-btn flex items-center justify-center" %>
       </div>
       
-      <div class="earnings-card-container">
+      <div class="card-container">
         <% if @earnings.any? %>
               <% @earnings.each do |earning| %>
-              <div class="earnings-card">
-                <h2 class="earning-card-title">
+              <div class="earnings-card card">
+                <h2 class="earning-card-title card-title">
                   <%= earning.title %>
                 </h2>
-                <p class="earning-card-value">
+                <p class="earning-card-value card-value">
                   <%= number_to_currency(earning.value) %>
                 </p>
-                <p class="earning-card-time">
+                <p class="earning-card-time card-time">
                   <%= earning.interval.strftime('%B %d, %Y') %>
                 </p>
-                  <div class="earning-card-actions">
+                  <div class="earning-card-actions card-actions">
                     <%= link_to 'Show', profile_earning_path(@profile, earning) %>
                     <%= link_to 'Edit', edit_profile_earning_path(@profile, earning) %>
                     <%= button_to 'Delete', profile_earning_path(@profile, earning), method: :delete, data: { turbo_confirm: 'Are you sure you want to delete this earning?' }, class:"delete-btn" %>
