@@ -59,6 +59,15 @@ nav.main-nav {
     margin: auto;
     height: 90%;
     width: 90%;
+    color: var(--accent-secondary);
+    transition: color 0.3s ease-in-out;
+}
+
+.main-nav-btn:hover svg {
+    color: var(--accent-primary);
+}
+
+.active-nav-btn svg{
     color: var(--accent-primary);
 }
 
