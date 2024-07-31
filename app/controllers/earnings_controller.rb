@@ -5,7 +5,7 @@ class EarningsController < ApplicationController
 
   def index
     @filter = params[:filter] || 'all'
-    @earnings = filter_earnings(@filter)
+    @earnings = filter_earnings(@filter).page(params[:page]).per(5)
     @total = @earnings.sum(:value)
   end
 

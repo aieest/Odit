@@ -5,7 +5,7 @@ class ExpensesController < ApplicationController
 
   def index
     @filter = params[:filter] || 'all'
-    @expenses = filter_expenses(@filter)
+    @expenses = filter_expenses(@filter).page(params[:page]).per(5)
     @total = @expenses.sum(:value)
   end
 
