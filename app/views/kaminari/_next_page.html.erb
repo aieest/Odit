@@ -1,0 +1,9 @@
+<% if current_page.last? %>
+  <span class="next disabled">
+    &gt;
+  </span>
+<% else %>
+  <span class="next">
+    <%= link_to '&gt;'.html_safe, url, rel: 'next', remote: remote %>
+  </span>
+<% end %>

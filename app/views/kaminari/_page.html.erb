@@ -1,0 +1,5 @@
+<% if page.current? %>
+  <span class="page-btn active-pagination-btn"><%= page %></span>
+<% else %>
+  <%= link_to page, url, {remote: remote, rel: page.rel, class: 'page-btn'} %>
+<% end %>

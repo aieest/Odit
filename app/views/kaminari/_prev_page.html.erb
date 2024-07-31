@@ -1,0 +1,9 @@
+<% if current_page.first? %>
+  <span class="prev disabled">
+    &lt;
+  </span>
+<% else %>
+  <span class="prev">
+    <%= link_to '&lt;'.html_safe, url, rel: 'prev', remote: remote %>
+  </span>
+<% end %>

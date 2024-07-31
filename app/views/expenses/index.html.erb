@@ -55,5 +55,6 @@
   
   <div class="profile-info-div grid">
     <%= render partial: 'profiles/profile-info-card', locals: { profile: current_user.profile } %>
+    <%= paginate @expenses %>
   </div>
 </div>  
