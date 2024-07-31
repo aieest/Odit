@@ -10,7 +10,7 @@
       <div class="total-card">
         <p class="home-card-label">Total Expenses</p>
         <div class="home-main-value-container">
-          <h1 class="home-main-value font-semibold"><%= number_to_currency(current_user.profile.total_expenses) %></h1>
+          <h1 class="home-main-value font-semibold"><%= number_to_currency(format_large_number(current_user.profile.total_expenses)) %></h1>
           <%= link_to '+', new_profile_expense_path(@profile), class: "add-expense"%>
         </div>
       </div>
@@ -30,7 +30,7 @@
                   <%= expense.title %>
                 </h2>
                 <p class="expense-card-value card-value">
-                  <%= number_to_currency(expense.value) %>
+                  <%= number_to_currency(format_large_number(expense.value)) %>
                 </p>
                 <p class="expense-card-time card-time">
                   <%= expense.interval.strftime('%B %d, %Y') %>
