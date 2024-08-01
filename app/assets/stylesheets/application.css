@@ -257,3 +257,39 @@ div.date-filters-div {
     background: none;
     box-shadow: none;
 }
+
+/* Settings */
+
+.settings-container {
+    box-shadow: var(--initial-shadow);
+    border-radius: 15px;
+    height: 100%;
+    padding: 20px 25px;
+    background-color: var(--card-bg);
+    display: grid;
+    grid-template-rows: 20% 20% auto;
+}
+.setting-header {
+    color: var(--text-color);
+}
+.setting-buttons-container {
+    width: 40%;
+}
+.setting-btn {
+    box-shadow: var(--initial-shadow);
+    border-radius: 5px;
+    padding: 10px 15px;
+    background-color: var(--accent-secondary);
+    color: white;
+    transition: 0.2s ease-in-out;
+}
+
+.setting-btn:hover {
+    color: var(--card-bg);
+    background: var(--accent-primary);
+    cursor: pointer;
+}
+
+.theme-selector-header i{
+    color: grey;
+}
