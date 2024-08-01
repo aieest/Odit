@@ -16,4 +16,6 @@ Rails.application.routes.draw do
     resources :earnings
     resources :expenses
   end
+
+  get 'settings', to: 'settings#index', as: 'settings'
 end

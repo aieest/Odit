@@ -14,7 +14,9 @@
     <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: "main-nav-btn" %>
     -->
     <i class="main-nav-btn"><%= heroicon "presentation-chart-line", variant: :outline %></i>
-    <i class="main-nav-btn"><%= heroicon "cog-6-tooth", variant: :outline %></i>
+    <%= link_to settings_path, class: "main-nav-btn #{current_page?(settings_path) ? 'active-nav-btn' : ''}" do %>
+        <%= heroicon "cog-6-tooth", variant: :outline %>
+    <% end %>
 <% else %>
     <!--Disabled nav links-->
     <i class="main-nav-btn"><%= heroicon "home", variant: :outline %></i>
