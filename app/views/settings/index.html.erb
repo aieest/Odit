@@ -9,7 +9,7 @@
         <div class="user-settings-card flex flex-col">
           <h2 class="setting-header w-full mb-4">Profile Settings:</h2>
           <div class="setting-buttons-container flex flex-row justify-between">
-            <i class="setting-btn font-semibold">Edit Balance</i>
+            <%= link_to 'Edit Balance', edit_balance_profile_path(current_user.profile), class: "setting-btn font-semibold" %>
             <%= link_to 'Edit Profile', edit_profile_path(current_user.profile), class: "setting-btn font-semibold" %>
             <%= button_to 'Sign out', destroy_user_session_path, method: :delete, class: "setting-btn font-semibold", data: { turbo: false } %>
           </div>
