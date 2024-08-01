@@ -10,6 +10,11 @@
     --initial-shadow: 0.5px 0 10px 1px #0000001b;
 }
 
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
 body {
     overflow: hidden;
@@ -256,4 +261,55 @@ div.date-filters-div {
 .pagination .gap {
     background: none;
     box-shadow: none;
+}
+
+/* form styles */
+.form{
+    background-color: var(--card-bg);
+    border-radius: 1.5rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 2rem;
+}
+.form h1{
+    font-size: 2rem;
+}
+.form .field{
+    display: flex;
+    flex-direction: column;
+    width: 30vw;
+}
+.field input{
+    border-radius: 5px;
+}
+
+.action-1{
+    display: flex;
+    gap: 5px;
+}
+
+.interval-selection{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.interval-selection select{
+    font-size: .8rem;
+    width: 100%;
+    text-align: left;
+    border-radius: 5px;
+
+}
+
+/* container shadow */
+.container__shadow{
+    box-shadow: var(--initial-shadow);
 }

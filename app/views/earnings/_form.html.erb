@@ -21,9 +21,11 @@
     <%= form.number_field :value, step: 0.01 %>
   </div>
 
-  <div class="field">
-    <%= form.label :interval %>
-    <%= form.datetime_select :interval %>
+  <div class="field interval">
+      
+    <div class="interval-selection">
+      <%= form.datetime_select :interval %>
+    </div>
   </div>
 
   <div class="actions">

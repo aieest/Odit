@@ -1,6 +1,11 @@
-<h1>Edit Expense</h1>
+<div class="form">
 
-<%= render 'form', expense: @expense %>
+    <h1>Edit Expense</h1>
 
-<%= link_to 'Show', profile_expense_path(@profile, @expense) %> |
-<%= link_to 'Back', profile_expenses_path(@profile) %>
+    <%= render 'form', expense: @expense %>
+    <div class="action-1">
+
+        <%= link_to 'Show', profile_expense_path(@profile, @expense) %> |
+        <%= link_to 'Back', profile_expenses_path(@profile) %>
+    </div>
+</div>

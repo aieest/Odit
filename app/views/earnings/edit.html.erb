@@ -1,6 +1,10 @@
-<h1>Edit Earning</h1>
+<div class="form container__shadow">
 
-<%= render 'form', earning: @earning %>
+    <h1>Edit Earning</h1>
 
-<%= link_to 'Show', profile_earning_path(@profile, @earning) %> |
-<%= link_to 'Back', profile_earnings_path(@profile) %>
+    <%= render 'form', earning: @earning %>
+    <div class="action-1">
+        <%= link_to 'Show', profile_earning_path(@profile, @earning) %> |
+        <%= link_to 'Back', profile_earnings_path(@profile) %>
+    </div>
+</div>
