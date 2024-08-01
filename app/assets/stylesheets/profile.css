@@ -14,8 +14,41 @@ div.profile-info-content {
 .card-profile-picture {
     border: 1px dashed var(--accent-secondary);
     object-fit: cover;
-  }
+}
 
-  p.profile-card.text {
-    color: var(--text-color);
-  }
+p.profile-card.text {
+  color: var(--text-color);
+}
+
+/* Edit Balance */
+
+.edit-balance-container {
+  height: 100%;
+  width: 100%;
+}
+
+.edit-balance-card {
+  box-shadow: var(--initial-shadow);
+  border-radius: 15px;
+  background: var(--card-bg);
+  height: fit-content;
+  width: 22%;
+  padding: 30px 0;
+}
+
+.edit-balance-header {
+  margin-bottom: 20px;
+  text-align: center;
+  color: var(--text-color);
+  font-size: 26px;
+}
+
+.edit-balance-cancel-btn {
+  margin-top: 10px;
+  color: var(--accent-secondary);
+  transition: 0.2s ease-in-out;
+}
+
+.edit-balance-cancel-btn:hover {
+  color: var(--accent-primary);
+}
