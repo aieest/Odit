@@ -79,3 +79,5 @@ gem 'faker'
 gem 'kaminari'
 
 gem "heroicon"
+
+gem 'jquery-rails'
