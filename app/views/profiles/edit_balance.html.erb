@@ -1,0 +1,19 @@
+<div class="edit-balance-container flex items-center justify-center">
+    <div class="edit-balance-card flex flex-col items-center justify-between m-auto">
+        
+        <h2 class="edit-balance-header font-bold">Edit Balance</h2>
+        
+        <%= form_with(model: @profile, url: update_balance_profile_path(@profile), method: :patch, local: true) do |form| %>
+        <div class="field">
+            <%= form.label :balance %><br>
+            <%= form.number_field :balance, step: 0.01 %>
+        </div>
+        
+        <div class="actions">
+            <%= form.submit 'Update Balance' %>
+        </div>
+        <% end %>
+        <%= link_to 'Cancel', settings_path, class: "edit-balance-cancel-btn font-seminold" %>
+    </div>
+</div>
+    

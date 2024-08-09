@@ -1,0 +1,29 @@
+<div class="session-true">
+  <nav class="main-nav">
+    <%= render 'partials/main-nav' %>
+  </nav>
+
+  <div class="main-content-div">
+    <% if current_user.profile && current_user.profile.complete? %>
+      <div class="settings-container w-full">
+        <div class="user-settings-card flex flex-col">
+          <h2 class="setting-header w-full mb-4">Profile Settings:</h2>
+          <div class="setting-buttons-container flex flex-row justify-between">
+            <%= link_to 'Edit Balance', edit_balance_profile_path(current_user.profile), class: "setting-btn font-semibold" %>
+            <%= link_to 'Edit Profile', edit_profile_path(current_user.profile), class: "setting-btn font-semibold" %>
+            <%= button_to 'Sign out', destroy_user_session_path, method: :delete, class: "setting-btn font-semibold", data: { turbo: false } %>
+          </div>
+        </div>
+        <div class="theme-selector">
+          <h2 class="setting-header theme-selector-header">Theme Selector <i class="">(Coming Soon)</i></h2>
+        </div>
+      </div>
+    <% else %>
+      <%= render partial: 'partials/profile-not-finished' %>
+    <% end %>
+  </div>
+  
+  <div class="profile-info-div grid">
+    <%= render partial: 'profiles/profile-info-card', locals: { profile: current_user.profile } %>
+  </div>
+</div>  
