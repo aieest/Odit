@@ -13,6 +13,10 @@ div.home-main-value-container{
     display: flex;
     color: var(--accent-primary);
 }
+h1.home-main-value__current-bal{
+    font-size: 3rem;
+    color: var(--accent-primary);
+}
 
 /* Home Cards */
 
